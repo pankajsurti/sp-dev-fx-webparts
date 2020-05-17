@@ -33,17 +33,19 @@ jobs:
       - task: Gulp@0
         displayName: 'Bundle project'
         inputs:
+          workingDirectory: '$(Build.SourcesDirectory)/samples/jquery-cdn'
           targets: bundle
           arguments: '--ship'
-      - script: npm test
-        displayName: 'npm test'
+      # - script: npm test
+      #   displayName: 'npm test'
+      #   workingDirectory: '$(Build.SourcesDirectory)/samples/jquery-cdn'
 
-      - task: PublishTestResults@2
-        displayName: Publish test results
-        inputs:
-          testResultsFormat: JUnit
-          testResultsFiles: '**/junit.xml'
-          #failTaskOnFailedTests: true #if we want to fail the build on failed unit tests
+      # - task: PublishTestResults@2
+      #   displayName: Publish test results
+      #   inputs:
+      #     testResultsFormat: JUnit
+      #     testResultsFiles: '**/junit.xml'
+      #     #failTaskOnFailedTests: true #if we want to fail the build on failed unit tests
       - task: PublishCodeCoverageResults@1
         displayName: 'Publish code coverage results'
         inputs:
@@ -54,6 +56,7 @@ jobs:
         displayName: 'Package Solution'
         inputs:
           targets: 'package-solution'
+          workingDirectory: '$(Build.SourcesDirectory)/samples/jquery-cdn'
           arguments: '--ship'
 
       - task: CopyFiles@2
