@@ -12,6 +12,14 @@ jobs:
       npm_config_cache: $(Pipeline.Workspace)/.npm
     steps:
       - checkout: self
+      - task: CopyFiles@2
+        inputs:
+          SourceFolder: '$(Build.ArtifactStagingDirectory)/samples/jquery-cdn'
+          Contents: '**'
+          TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
+      - task: CopyFiles@2
+          '$(Build.SourcesDirectory)/samples/jquery-cdn'
       - task: NodeTool@0
         displayName: 'Use Node 10.x'
         inputs:
@@ -19,21 +27,15 @@ jobs:
           checkLatest: true
       - task: CacheBeta@1
         inputs:
-          workingDirectory: '/samples/jquery-cdn'
           key: npm | $(Agent.OS) | package-lock.json
           path: $(npm_config_cache)
           cacheHitVar: CACHE_RESTORED
       - script: |
-          pwd
-          pwd
           npm install 
-        workingDirectory: '$(Build.SourcesDirectory)/samples/jquery-cdn'
         displayName: 'npm ci'
-
       - task: Gulp@0
         displayName: 'Bundle project'
         inputs:
-          workingDirectory: '$(Build.SourcesDirectory)/samples/jquery-cdn'
           targets: bundle
           arguments: '--ship'
       # - script: npm test
@@ -56,7 +58,6 @@ jobs:
         displayName: 'Package Solution'
         inputs:
           targets: 'package-solution'
-          workingDirectory: '$(Build.SourcesDirectory)/samples/jquery-cdn'
           arguments: '--ship'
 
       - task: CopyFiles@2
