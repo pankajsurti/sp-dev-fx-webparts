@@ -27,7 +27,6 @@ jobs:
       - script: npm ci
         displayName: 'npm ci'
 
-
       - task: Gulp@0
         displayName: 'Bundle project'
         inputs:
