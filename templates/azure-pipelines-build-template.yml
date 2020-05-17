@@ -14,9 +14,9 @@ jobs:
       - checkout: self
       - task: CopyFiles@2
         inputs:
-          SourceFolder: '$(Build.ArtifactStagingDirectory)/samples/jquery-cdn'
+          SourceFolder: '$(Build.SourcesDirectory)/samples/jquery-cdn'
           Contents: '**'
-          TargetFolder: '$(Build.ArtifactStagingDirectory)'
+          TargetFolder: '$(Build.SourcesDirectory)'
       - task: NodeTool@0
         displayName: 'Use Node 10.x'
         inputs:
