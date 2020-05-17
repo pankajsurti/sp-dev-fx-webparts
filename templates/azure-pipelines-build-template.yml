@@ -18,7 +18,7 @@ jobs:
           versionSpec: 10.x
           checkLatest: true
       - script: cd samples/jquery-cdn
-        displayName: 'Change Directory to samples/jquery-cdn'
+        displayName: 'Change Directory  samples/jquery-cdn'
       - task: CacheBeta@1
         inputs:
           key: npm | $(Agent.OS) | package-lock.json
