@@ -8,15 +8,29 @@ trigger:
 
 pool:
   vmImage: 'ubuntu-latest'
-
+  demands:
+  - npm
+  - node.js
+  - java
+variables:
+  npm_config_cache: $(Pipeline.Workspace)/.npm
 steps:
 - task: NodeTool@0
+  displayName: 'Use Node 10.x'
   inputs:
-    versionSpec: '10.x'
+    versionSpec: 10.x
+    checkLatest: true
   displayName: 'Install Node.js'
+      - task: CacheBeta@1
+  inputs:
+    key: npm | $(Agent.OS) | package-lock.json
+    path: $(npm_config_cache)
+    cacheHitVar: CACHE_RESTORED
 
 - script: |
+    
     npm install
     pwd
-    # npm run build
+    cd samples/jquery-cdn
+    npm run build
   displayName: 'npm install and build'
