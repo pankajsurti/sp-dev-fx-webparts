@@ -22,11 +22,8 @@ jobs:
           key: npm | $(Agent.OS) | package-lock.json
           path: $(npm_config_cache)
           cacheHitVar: CACHE_RESTORED
-      - script: | 
-        pwd
-        cd samples/jquery-cdn
-        pwd
-        npm ci
+      - script: npm ci 
+        workingDirectory: 'samples/jquery-cdn'
         displayName: 'pwd cd and npm ci'
 
       - task: Gulp@0
