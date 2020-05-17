@@ -17,13 +17,13 @@ jobs:
         inputs:
           versionSpec: 10.x
           checkLatest: true
-      - script: cd samples/jquery-cdn
-        displayName: 'Change Directory  samples/jquery-cdn'
       - task: CacheBeta@1
         inputs:
           key: npm | $(Agent.OS) | package-lock.json
           path: $(npm_config_cache)
           cacheHitVar: CACHE_RESTORED
+      - script: cd samples/jquery-cdn
+        displayName: 'Change Directory  samples/jquery-cdn'
       - script: npm ci
         displayName: 'npm ci'
 
