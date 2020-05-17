@@ -24,6 +24,7 @@ jobs:
           path: $(npm_config_cache)
           cacheHitVar: CACHE_RESTORED
       - script: npm ci 
+        workingDirectory: '/samples/jquery-cdn'
         displayName: 'npm ci'
 
       - task: Gulp@0
