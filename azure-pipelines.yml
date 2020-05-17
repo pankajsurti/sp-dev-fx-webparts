@@ -28,6 +28,16 @@ steps:
 - script: |
     pwd
     cd samples/jquery-cdn
-    npm install
-    npm run build
-  displayName: 'npm install and build'
+    #npm install
+  displayName: 'change directory'
+- script: npm ci
+  displayName: 'npm ci'
+- task: Gulp@0
+  displayName: 'Bundle project'
+  inputs:
+    targets: bundle
+    arguments: '--ship'
+
+
+
+
