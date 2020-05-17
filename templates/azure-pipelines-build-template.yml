@@ -17,9 +17,6 @@ jobs:
           SourceFolder: '$(Build.ArtifactStagingDirectory)/samples/jquery-cdn'
           Contents: '**'
           TargetFolder: '$(Build.ArtifactStagingDirectory)'
-
-      - task: CopyFiles@2
-          '$(Build.SourcesDirectory)/samples/jquery-cdn'
       - task: NodeTool@0
         displayName: 'Use Node 10.x'
         inputs:
