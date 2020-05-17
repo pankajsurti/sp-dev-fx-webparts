@@ -26,8 +26,8 @@ steps:
     path: $(npm_config_cache)
     cacheHitVar: CACHE_RESTORED
 - script: |
-    npm install
     pwd
     cd samples/jquery-cdn
+    npm install
     npm run build
   displayName: 'npm install and build'
