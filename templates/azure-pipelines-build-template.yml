@@ -27,7 +27,7 @@ jobs:
         cd samples/jquery-cdn
         pwd
         npm ci
-        displayName: 'npm ci'
+        displayName: 'pwd cd and npm ci'
 
       - task: Gulp@0
         displayName: 'Bundle project'
