@@ -16,19 +16,16 @@ variables:
   npm_config_cache: $(Pipeline.Workspace)/.npm
 steps:
 - task: NodeTool@0
-  displayName: 'Use Node 10.x'
+  displayName: 'Install Node.js and Use Node 10.x'
   inputs:
     versionSpec: 10.x
     checkLatest: true
-  displayName: 'Install Node.js'
-      - task: CacheBeta@1
+- task: CacheBeta@1
   inputs:
     key: npm | $(Agent.OS) | package-lock.json
     path: $(npm_config_cache)
     cacheHitVar: CACHE_RESTORED
-
 - script: |
-    
     npm install
     pwd
     cd samples/jquery-cdn
