@@ -19,11 +19,12 @@ jobs:
           checkLatest: true
       - task: CacheBeta@1
         inputs:
+          workingDirectory: '/samples/jquery-cdn'
           key: npm | $(Agent.OS) | package-lock.json
           path: $(npm_config_cache)
           cacheHitVar: CACHE_RESTORED
       - script: npm ci 
-        workingDirectory: 'samples/jquery-cdn'
+        workingDirectory: '/samples/jquery-cdn'
         displayName: 'pwd cd and npm ci'
 
       - task: Gulp@0
