@@ -26,7 +26,7 @@ jobs:
       - script: |
           pwd
           pwd
-          npm ci 
+          npm install 
         workingDirectory: '$(Build.SourcesDirectory)/samples/jquery-cdn'
         displayName: 'npm ci'
 
