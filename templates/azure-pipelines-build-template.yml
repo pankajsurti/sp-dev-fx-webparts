@@ -25,11 +25,10 @@ jobs:
           cacheHitVar: CACHE_RESTORED
       - script: |
           pwd
-          cd '/samples/jquery-cdn'
           pwd
           npm ci 
-          workingDirectory: '$(Build.SourcesDirectory)/samples/jquery-cdn'
-          displayName: 'npm ci'
+        workingDirectory: '$(Build.SourcesDirectory)/samples/jquery-cdn'
+        displayName: 'npm ci'
 
       - task: Gulp@0
         displayName: 'Bundle project'
