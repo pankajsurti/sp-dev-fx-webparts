@@ -23,8 +23,9 @@ jobs:
           key: npm | $(Agent.OS) | package-lock.json
           path: $(npm_config_cache)
           cacheHitVar: CACHE_RESTORED
-      - script: npm ci 
-        workingDirectory: '/samples/jquery-cdn'
+      - script: |
+        npm ci 
+        workingDirectory: '$(System.DefaultWorkingDirectory)'
         displayName: 'npm ci'
 
       - task: Gulp@0
