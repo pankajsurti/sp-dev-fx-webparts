@@ -24,7 +24,9 @@ jobs:
           cacheHitVar: CACHE_RESTORED
       - script: cd samples/jquery-cdn
         displayName: 'Change Directory  samples/jquery-cdn'
-      - script: npm ci
+      - script: | 
+        cd samples/jquery-cdn
+        npm ci
         displayName: 'npm ci'
 
       - task: Gulp@0
