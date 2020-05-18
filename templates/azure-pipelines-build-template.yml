@@ -14,7 +14,7 @@ jobs:
       - checkout: self
       - task: CopyFiles@2
         inputs:
-          SourceFolder: '$(Build.SourcesDirectory)/samples/jquery-cdn'
+          SourceFolder: '$(Build.SourcesDirectory)/samples/react-accordion'
           Contents: '**'
           TargetFolder: '$(Build.SourcesDirectory)'
       - task: NodeTool@0
