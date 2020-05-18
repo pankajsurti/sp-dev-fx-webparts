@@ -1,6 +1,5 @@
 parameters:
   name: ''
-  sample-build-deploy: ''
 jobs:
   - job: ${{ parameters.name }}
     pool:
@@ -14,9 +13,9 @@ jobs:
     steps:
       - checkout: self
       - task: CopyFiles@2
-        displayName: 'Copy files from /samples/react-accordion'
+        displayName: 'Copy files from /samples/$(sample-folder-var)'
         inputs:
-          SourceFolder: '$(Build.SourcesDirectory)/samples/$${{ parameters.sample-build-deploy }}'
+          SourceFolder: '$(Build.SourcesDirectory)/samples/$(sample-folder-var)'
           Contents: '**'
           TargetFolder: '$(Build.SourcesDirectory)'
       - task: NodeTool@0
