@@ -16,6 +16,7 @@ stages:
     - template: ./templates/azure-pipelines-build-template.yml
       parameters:
         name: 'buildsolution'
+        sample-build-deploy: 'react-birthdays'
 - stage: 'deployqa'
   # condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
   jobs:
