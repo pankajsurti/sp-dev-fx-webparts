@@ -13,6 +13,7 @@ jobs:
     steps:
       - checkout: self
       - task: CopyFiles@2
+        displayName: 'Copy files from /samples/react-accordion'
         inputs:
           SourceFolder: '$(Build.SourcesDirectory)/samples/react-accordion'
           Contents: '**'
