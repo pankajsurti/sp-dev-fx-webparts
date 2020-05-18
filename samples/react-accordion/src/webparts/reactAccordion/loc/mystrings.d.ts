@@ -2,7 +2,7 @@ declare interface IReactAccordionWebPartStrings {
   PropertyPaneDescription: string;
   BasicGroupName: string;
   ListNameLabel: string;
-  MaxItemsPerPageLabel: string
+  MaxItemsPerPageLabel: string;
 }
 
 declare module 'ReactAccordionWebPartStrings' {
