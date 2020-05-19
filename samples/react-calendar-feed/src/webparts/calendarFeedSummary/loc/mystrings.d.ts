@@ -1,4 +1,12 @@
 declare interface ICalendarFeedSummaryWebPartStrings {
+  UseCorsFieldDescription: string;
+  ConvertFromUTCFieldDescription: string;
+  ConvertFromUTCOptionNo: string;
+  ConvertFromUTCOptionYes: string;
+  ConvertFromUTCLabel: string;
+  MaxTotalFieldDescription: string;
+  MaxTotalFieldLabel: string;
+  FilmStripAriaLabel: string;
   PropertyPaneDescription: string;
   BasicGroupName: string;
   AllItemsUrlFieldLabel: string;
@@ -22,6 +30,7 @@ declare interface ICalendarFeedSummaryWebPartStrings {
   DateRangeOptionQuarter: string;
   UseCORSFieldLabel: string;
   UseCORSFieldCallout: string;
+  UseCORSFieldCalloutDisabled: string;
   CORSOn: string;
   CORSOff: string;
   AdvancedGroupName: string;
@@ -52,6 +61,7 @@ declare interface ICalendarFeedSummaryWebPartStrings {
   AddToCalendarButtonLabel: string;
   AllDayDateFormat: string;
   LocalizedTimeFormat: string;
+  FeedSettingsGroupName: string;
 }
 
 declare module 'CalendarFeedSummaryWebPartStrings' {
