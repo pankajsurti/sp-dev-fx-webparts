@@ -29,8 +29,9 @@ jobs:
           path: $(npm_config_cache)
           cacheHitVar: CACHE_RESTORED
       - script: |
+          npm set progress=false
           npm install 
-        displayName: 'npm ci'
+        displayName: 'npm install'
       - task: Gulp@0
         displayName: 'Clean project'
         inputs:
