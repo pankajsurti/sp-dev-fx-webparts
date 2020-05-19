@@ -16,7 +16,7 @@ jobs:
         displayName: 'Copy files from /samples/$(sample-folder-var)'
         inputs:
           SourceFolder: '$(Build.SourcesDirectory)/samples/$(sample-folder-var)'
-          Contents: '**'
+          Contents: '**/*'
           TargetFolder: '$(Build.SourcesDirectory)'
       - task: NodeTool@0
         displayName: 'Use Node 10.x'
@@ -32,6 +32,16 @@ jobs:
           npm install 
         displayName: 'npm ci'
       - task: Gulp@0
+        displayName: 'Clean project'
+        inputs:
+          targets: clean
+          arguments: '--ship'
+      - task: Gulp@0
+        displayName: 'Build project'
+        inputs:
+          targets: build
+          arguments: '--ship'
+      - task: Gulp@0
         displayName: 'Bundle project'
         inputs:
           targets: bundle
@@ -46,12 +56,11 @@ jobs:
       #     testResultsFormat: JUnit
       #     testResultsFiles: '**/junit.xml'
       #     #failTaskOnFailedTests: true #if we want to fail the build on failed unit tests
-      - task: PublishCodeCoverageResults@1
-        displayName: 'Publish code coverage results'
-        inputs:
-          codeCoverageTool: Cobertura
-          summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/*coverage.xml'
-
+      # - task: PublishCodeCoverageResults@1
+      #   displayName: 'Publish code coverage results'
+      #   inputs:
+      #     codeCoverageTool: Cobertura
+      #     summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/*coverage.xml'
       - task: Gulp@0
         displayName: 'Package Solution'
         inputs:
