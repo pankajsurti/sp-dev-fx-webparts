@@ -31,11 +31,11 @@ jobs:
       - script: |
           npm install 
         displayName: 'npm install'
-      - task: Gulp@0
-        displayName: 'Clean project'
-        inputs:
-          targets: clean
-          arguments: '--ship'
+      # - task: Gulp@0
+      #   displayName: 'Clean project'
+      #   inputs:
+      #     targets: clean
+      #     arguments: '--ship'
       - task: Gulp@0
         displayName: 'Build project'
         inputs:
