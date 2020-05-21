@@ -29,8 +29,8 @@ jobs:
       #     path: $(npm_config_cache)
       #     cacheHitVar: CACHE_RESTORED
       - script: |
-          npm ci 
-        displayName: 'npm ci'
+          npm i 
+        displayName: 'npm i'
       # - task: Gulp@0
       #   displayName: 'Clean project'
       #   inputs:
