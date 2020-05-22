@@ -23,6 +23,8 @@ jobs:
           SourceFolder: '$(Build.SourcesDirectory)/samples/$(sample-folder-var)'
           Contents: '/**/*'
           TargetFolder: '$(Build.SourcesDirectory)'
+      - script: delete package-lock.json
+        displayName: 'delete package-lock.json'
       - task: CacheBeta@1
         inputs:
           key: npm | $(Agent.OS) | package-lock.json
@@ -30,8 +32,6 @@ jobs:
           cacheHitVar: CACHE_RESTORED
       - script: npm i
         displayName: 'npm i'
-
-
       - task: Gulp@0
         displayName: 'Bundle project'
         inputs:
