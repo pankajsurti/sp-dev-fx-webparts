@@ -25,11 +25,11 @@ jobs:
           TargetFolder: '$(Build.SourcesDirectory)'
       - script: rm package-lock.json
         displayName: 'rm package-lock.json'
-      - task: CacheBeta@1
-        inputs:
-          key: npm | $(Agent.OS) | package-lock.json
-          path: $(npm_config_cache)
-          cacheHitVar: CACHE_RESTORED
+      # - task: CacheBeta@1
+      #   inputs:
+      #     key: npm | $(Agent.OS) | package-lock.json
+      #     path: $(npm_config_cache)
+      #     cacheHitVar: CACHE_RESTORED
       - script: npm i
         displayName: 'npm i'
       - task: Gulp@0
