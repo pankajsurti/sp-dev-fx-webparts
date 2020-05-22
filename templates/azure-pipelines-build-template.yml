@@ -16,7 +16,7 @@ jobs:
         displayName: 'Copy files from /samples/$(sample-folder-var)'
         inputs:
           SourceFolder: '$(Build.SourcesDirectory)/samples/$(sample-folder-var)'
-          Contents: '**/*'
+          Contents: '/**/*'
           TargetFolder: '$(Build.SourcesDirectory)'
       - task: NodeTool@0
         displayName: 'Use Node 10.x'
