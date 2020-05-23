@@ -40,7 +40,8 @@ jobs:
       working-directory: ${{ env.SAMPLE_TO_BUILD_DEPLOY }}
       run: |
         gulp bundle --ship
-        gulp package-solution --ship    
+        gulp package-solution --ship
+        ls -l ${{ env.APP_FILE_PATH }}    
     
     - uses: actions/upload-artifact@v2
       with:
