@@ -10,6 +10,7 @@ extensions:
   - SharePoint Framework
   createdDate: 8/30/2016 10:21:43 AM
 ---
+![SPFx CICD with Office 365 CLI](https://github.com/pankajsurti/sp-dev-fx-webparts/workflows/SPFx%20CICD%20with%20Office%20365%20CLI/badge.svg)
 # SharePoint Framework Client-Side Web Part Samples & Tutorial Materials
 
 This repository contains community samples that demonstrate different usage patterns for the SharePoint Framework client-side web parts.
