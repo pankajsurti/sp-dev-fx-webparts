@@ -125,8 +125,8 @@ export default class GitHubBadgeWebPart extends BaseClientSideWebPart<IGitHubBad
         created_at.innerText = responseJSONparsed.created_at;
         updated_at.innerText = responseJSONparsed.updated_at;
       })
-      .catch ((response: any) => {
-        let errMsg: string = `WARNING - error when calling URL ${gitHubUrl}. Error = ${response.message}`;
+      .catch ((response1: any) => {
+        let errMsg: string = `WARNING - error when calling URL ${gitHubUrl}. Error = ${response1.message}`;
         notfound.style.color = "red";
         console.log(errMsg);
         notfound.innerText = errMsg;
