@@ -149,10 +149,10 @@ export default class RecentOrders extends React.Component<IRecentOrdersProps, IR
         });
       });
   }
-
+  
   private getOrdersAccessToken(): Promise<string> {
     return new Promise<string>((resolve: (accessToken: string) => void, reject: (error: any) => void): void => {
-      const ordersResource: string = '00000000-0000-0000-0000-000000000000';
+      const ordersResource: string = '18d99976-ff3e-4d4a-81b4-82eb41338f2b';
       const accessToken: string = this.authCtx.getCachedToken(ordersResource);
       if (accessToken) {
         resolve(accessToken);
@@ -182,7 +182,7 @@ export default class RecentOrders extends React.Component<IRecentOrdersProps, IR
 
   private static getOrders(accessToken: string, httpClient: HttpClient): Promise<IOrder[]> {
     return new Promise<IOrder[]>((resolve: (orders: IOrder[]) => void, reject: (error: any) => void): void => {
-      httpClient.get(`https://your-api-app.azurewebsites.net/api/orders`, {
+      httpClient.get(`https://react-aad-order-webapi.azurewebsites.net/api/orders`, {
         headers: {
           'Accept': 'application/json',
           'Authorization': 'Bearer ' + accessToken
