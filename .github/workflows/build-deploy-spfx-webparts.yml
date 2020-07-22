@@ -60,7 +60,7 @@ jobs:
     # Deploy package to tenant using action-cli-deploy
     - name: Office 365 CLI Deploy ${{ steps.get-pkgname.outputs.pkgname }}
       id: o365clideploy # optional - use if output needs to be used
-      uses: pnp/action-cli-deploy@v1.0.0
+      uses: pnp/action-cli-deploy@v1.0.1
       with:
         APP_FILE_PATH: ${{ steps.get-pkgname.outputs.pkgname }}
         SKIP_FEATURE_DEPLOYMENT: false
