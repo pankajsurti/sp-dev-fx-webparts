@@ -2,7 +2,6 @@ name: SPFx WebParts CICD with Office 365 CLI
 
 on: push
 
-
 # Variables that are available for all the jobs in the workflow
 env:
   APP_FILE_PATH: '**/*.sppkg'
@@ -64,7 +63,7 @@ jobs:
       uses: pnp/action-cli-deploy@v1.0.0
       with:
         APP_FILE_PATH: ${{ steps.get-pkgname.outputs.pkgname }}
-        SKIP_FEATURE_DEPLOYMENT: false
+        SKIP_FEATURE_DEPLOYMENT: true
         OVERWRITE: true
     # Send an email using action-cli-runscript
     - name: Office 365 CLI Send email
