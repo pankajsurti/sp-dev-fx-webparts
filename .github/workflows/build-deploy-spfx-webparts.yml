@@ -63,8 +63,8 @@ jobs:
       uses: pnp/action-cli-deploy@v1.0.0
       with:
         APP_FILE_PATH: ${{ steps.get-pkgname.outputs.pkgname }}
-        SKIP_FEATURE_DEPLOYMENT: true
-        OVERWRITE: false
+        SKIP_FEATURE_DEPLOYMENT: false
+        OVERWRITE: true
     # Send an email using action-cli-runscript
     - name: Office 365 CLI Send email
       uses: pnp/action-cli-runscript@v1.0.0
