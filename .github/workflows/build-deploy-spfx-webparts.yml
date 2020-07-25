@@ -2,7 +2,7 @@ name: SPFx WebParts CICD with Office 365 CLI
 
 on: push
 
-# Variables that are available for all the jobs in the workflow
+# Variables that are available for all the jobs in the workflow - 07/30
 env:
   APP_FILE_PATH: '**/*.sppkg'
   SAMPLE_TO_BUILD_DEPLOY: './samples/react-script-editor'
