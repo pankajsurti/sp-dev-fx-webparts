@@ -2,6 +2,7 @@ name: SPFx WebParts CICD with Office 365 CLI
 
 on: push
 
+
 # Variables that are available for all the jobs in the workflow - 07/25  
 env:
   APP_FILE_PATH: '**/*.sppkg'
