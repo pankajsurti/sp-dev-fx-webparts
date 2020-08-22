@@ -4,6 +4,7 @@ on: push
 
 # test on 07/31
 # Variables that are available for all the jobs in the workflow - 07/25  
+
 env:
   APP_FILE_PATH: '**/*.sppkg'
   SAMPLE_TO_BUILD_DEPLOY: './samples/react-securitygrid'
