@@ -7,7 +7,7 @@ on: push
 
 env:
   APP_FILE_PATH: '**/*.sppkg'
-  SAMPLE_TO_BUILD_DEPLOY: './samples/react-securitygrid'
+  SAMPLE_TO_BUILD_DEPLOY: './samples/react-script-editor'
   SEND_MAIL: 'false'
 
 jobs:
